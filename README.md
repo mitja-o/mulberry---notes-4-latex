@@ -1,4 +1,4 @@
-# 🍓 mulberry ~ todo-marks-for-tex
+# 🍓 mulberry notes ~ marks, todo's and other notes for LaTeX
 
 > [!NOTE]
 > Mark your TODO's and other notes in the LaTeX document, with a subjective style.
@@ -14,10 +14,10 @@ Feel free to try it out and use it if you like it!
 
 ```tex
 % Enable the marks
-\usepackage{mulberry-todo-marks}
+\usepackage{mulberry-notes}
 
 % This will hide all the marks, useful for final manuscript views
-% \usepackage[hidden]{mulberry-todo-marks}
+% \usepackage[hidden]{mulberry-notes}
 
 \begin{document}
 
@@ -37,7 +37,7 @@ Welcome to the mulberry todo marks.
 
 The feature set is very basic but keeps expanding and open for new ideas.  
 
-See all available features in the [documentation](./mulberry-todo-marks-manual.md).
+See all available features in the [documentation](./mulberry-notes-manual.md).
 
 ### Adding new features
 
