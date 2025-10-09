@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2025 Mitja O
+% Copyright (C) 2025 Mitja Orlov
 %
 % This file may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -14,3 +14,107 @@
 %
 % \fi
 
+% -- To Do Highlights --
+
+% Creates a basic in-line todo note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - todo text.
+%   (optional) - mark symbol, default: $\odot$, provide an empty value to skip.
+%
+% Examples:
+%   \todoM{do the dishes before starting the next paragraph}
+%   \todoM[$\star$]{mention this later, mark with a star}
+%   \todoM[]{recall this, even without a margin mark}
+\newcommand{\todoM}[2][\textcircled{$\odot$}]{
+    {\marginpar{{\color{purple} #1}}}
+    {\color{purple}\textbf{TODO:} #2}
+}
+
+% Same as \todoM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+%  Arguments: 
+%   (required) - todo text.
+%   (optional) - mark symbol, default: $\odot$, provide an empty value to skip.
+\newcommand{\todoMNP}[2][\textcircled{$\odot$}]{
+    {\color{purple}\textbf{#1 TODO:} #2}
+}
+
+% Same as \todoM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - todo text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\todoMH}[2]{}
+
+% -- Notes --
+
+% Creates a basic in-line note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - note text.
+%   (optional) - mark symbol, default: $\nu$, provide an empty value to skip.
+%
+% Examples:
+%   \noteM{this paragraph can use some extra references}
+%   \noteM[$\star$]{this is a very good remark, keep the point going}
+%   \noteM[]{just saying, this reminds me of XYZ}
+\newcommand{\noteM}[2][\textcircled{$\nu$}]{
+    {\marginpar{{\color{darkgray} #1}}}
+    {\color{darkgray}\textbf{NOTE:} #2}
+}
+
+% Same as \noteM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+% Arguments: 
+%   (required) - note text.
+%   (optional) - mark symbol, default: $\nu$, provide an empty value to skip.
+\newcommand{\noteMNP}[2][\textcircled{$\nu$}]{
+    {\color{darkgray}\textbf{#1 NOTE:} #2}
+}
+
+% Same as \noteM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - note text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\noteMH}[2]{}
+
+% -- Idea Notes --
+
+% Creates a basic in-line idea note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - idea text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+%
+% Examples:
+%   \noteM{this paragraph should start with a good quote}
+%   \noteM[$\star$]{here we should add a figure}
+%   \noteM[]{might be worth adding a footnote}
+\newcommand{\ideaM}[2][\textcircled{$\iota$}]{
+    {\marginpar{{\color{olive} #1}}}
+    {\color{olive}\textbf{IDEA:} #2}
+}
+
+% Same as \ideaM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+% Arguments: 
+%   (required) - idea text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+\newcommand{\ideaMNP}[2][\textcircled{$\iota$}]{
+    {\color{olive}\textbf{#1 IDEA:} #2}
+}
+
+% Same as \ideaM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - note text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\ideaMH}[2]{}
