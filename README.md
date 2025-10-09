@@ -41,7 +41,7 @@ See all available features in the [documentation](./mulberry-notes-manual.md).
 
 ### Adding new features
 
-The core principle: 
+The core principle (that I try to maintain): 
   - **_keeping it simple_** (to develop and use).
     - also, I try not to use external dependencies (to keep this package as free from interferences as possible). 
 
