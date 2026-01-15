@@ -39,12 +39,12 @@ See all available features in the [documentation](./mulberry-notes-manual.md).
 
 ### Adding new features
 
+> [!NOTE]
+> Feel free to submit feature requests as issues or PRs! 😊
+
 The core principle (that I try to maintain): 
   - **_keeping it simple_** (to develop and use).
     - also, I try not to use external dependencies (to keep this package as free from interferences as possible). 
-
-> [!IMPORTANT]
-> Feel free to submit feature requests as issues or PRs! 😊
 
 ## Inspiration
 
