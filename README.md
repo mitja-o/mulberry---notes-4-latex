@@ -1,4 +1,4 @@
-# 🍓 `mulberry-notes` ~ notes, todo's and more for LaTeX
+# 🟣 `mulberry-notes` ~ notes, todo's and more for LaTeX
 
 > [!NOTE]
 > Mark your **TODO's and other notes** in the LaTeX document, with a subjective style and margin highlights.
