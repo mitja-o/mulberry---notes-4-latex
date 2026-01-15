@@ -10,6 +10,8 @@ Feel free to try it out and use it if you like it!
 
 ## Getting started
 
+Here's how to start using `mulberry-notes`:
+
 ```tex
 % Enable the marks
 \usepackage{mulberry-notes}
@@ -33,9 +35,12 @@ Welcome to the mulberry todo marks.
 
 ## Features
 
+> [!NOTE]
+> See all available features in the [documentation](./mulberry-notes-manual.md).
+
 The feature set is very basic but keeps expanding and open for new ideas.  
 
-See all available features in the [documentation](./mulberry-notes-manual.md).
+<!-- TODO: add a demo example -->
 
 ### Adding new features
 
