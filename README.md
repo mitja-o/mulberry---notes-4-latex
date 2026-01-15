@@ -2,8 +2,6 @@
 
 > [!NOTE]
 > Mark your **TODO's and other notes** in the LaTeX document, with a subjective style and margin highlights.
->
-> - _Or, make your manuscript annotations eye catchy like a berry in a forest 🫐._
 
 This package is tailored for my subjective way of leaving notes in LaTeX documents.   
 It aims at simplicity, author traces, and visual clues. 
