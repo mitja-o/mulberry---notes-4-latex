@@ -1,0 +1,236 @@
+\RequirePackage{xcolor}
+\RequirePackage{enotez}
+\RequirePackage{xspace}
+
+% \iffalse meta-comment
+%
+% Copyright (C) 2025 Mitja Orlov
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either
+% version 1.3 of this license or (at your option) any later
+% version. The latest version of this license is in:
+%
+%   http://www.latex-project.org/lppl.txt
+%
+% and version 1.3c or later is part of all distributions of
+% LaTeX version 2008-05-04 or later.
+%
+% \fi
+
+\newcommand{\showMulberryNotesCounter}{1}% set to 0 to hide
+\DeclareOption{hidden}{\renewcommand{\showMulberryNotesCounter}{0}}
+\ProcessOptions\relax
+
+% -- Colors --
+
+% Source: https://colorbrewer2.org/#type=qualitative&scheme=Pastel1&n=5
+\definecolor{mTodoColor}{HTML}{b3e2cd}
+\definecolor{mIdeaColor}{HTML}{e6f5c9}
+\definecolor{mNoteColor}{HTML}{cbd5e8}
+\definecolor{mMemColor}{HTML}{f4cae4}
+\definecolor{mPeachColor}{HTML}{fdcdac}
+
+% -- To Do Highlights --
+
+% Creates a basic in-line todo note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - todo text.
+%   (optional) - mark symbol, default: $\odot$, provide an empty value to skip.
+%
+% Examples:
+%   \todoM{do the dishes before starting the next paragraph}
+%   \todoM[$\star$]{mention this later, mark with a star}
+%   \todoM[]{recall this, even without a margin mark}
+\newcommand{\todoM}[2][\textcircled{$\odot$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\marginpar{{\color{mTodoColor} #1}}}
+    {\color{mTodoColor}\textbf{TODO:} #2}
+}% then
+{}% else
+}
+
+% Same as \todoM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+%  Arguments: 
+%   (required) - todo text.
+%   (optional) - mark symbol, default: $\odot$, provide an empty value to skip.
+\newcommand{\todoMNP}[2][\textcircled{$\odot$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\color{mTodoColor}\textbf{#1 TODO:} #2}
+}% then
+{}% else
+}
+
+% Same as \todoM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - todo text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\todoMH}[2]{\xspace}
+
+% -- Notes --
+
+% Creates a basic in-line note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - note text.
+%   (optional) - mark symbol, default: $\nu$, provide an empty value to skip.
+%
+% Examples:
+%   \noteM{this paragraph can use some extra references}
+%   \noteM[$\star$]{this is a very good remark, keep the point going}
+%   \noteM[]{just saying, this reminds me of XYZ}
+\newcommand{\noteM}[2][\textcircled{$\nu$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\marginpar{{\color{mNoteColor} #1}}}
+    {\color{mNoteColor}\textbf{NOTE:} #2}
+}% then
+{}% else
+}
+
+% Same as \noteM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+% Arguments: 
+%   (required) - note text.
+%   (optional) - mark symbol, default: $\nu$, provide an empty value to skip.
+\newcommand{\noteMNP}[2][\textcircled{$\nu$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\color{mNoteColor}\textbf{#1 NOTE:} #2}
+}% then
+{}% else
+}
+
+% Same as \noteM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - note text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\noteMH}[2]{\xspace}
+
+% -- Idea Notes --
+
+% Creates a basic in-line idea note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - idea text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+%
+% Examples:
+%   \noteM{this paragraph should start with a good quote}
+%   \noteM[$\star$]{here we should add a figure}
+%   \noteM[]{might be worth adding a footnote}
+\newcommand{\ideaM}[2][\textcircled{$\iota$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\marginpar{{\color{mIdeaColor} #1}}}
+    {\color{mIdeaColor}\textbf{IDEA:} #2}
+}% then
+{}% else
+}
+
+% Same as \ideaM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+% Arguments: 
+%   (required) - idea text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+\newcommand{\ideaMNP}[2][\textcircled{$\iota$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\color{mIdeaColor}\textbf{#1 IDEA:} #2}
+}% then
+{}% else
+}
+
+% Same as \ideaM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - idea text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\ideaMH}[2]{\xspace}
+
+% -- Query Notes --
+
+% Creates a basic in-line query note with a margin callout mark.
+%
+% Arguments: 
+%   (required) - query text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+%
+% Examples:
+%   \queryM{What is the relevance of this data?}
+%   \queryM[$\star$]{What do you mean with this caption?}
+%   \queryM[]{Do you think a footnote is useful?}
+\newcommand{\queryM}[2][\textcircled{$\alpha$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\marginpar{{\color{mMemColor} #1}}}
+    {\color{mMemColor}\textbf{MEM:} {#2}}
+}% then
+{}% else
+}
+
+% Creates in-line query flag with a margin callout mark, and content sent to end-notes.
+%
+% Arguments: 
+%   (required) - query text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+\newcommand{\queryMEN}[2][\textcircled{$\alpha$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\marginpar{{\color{mMemColor} #1}}}
+    {\color{mMemColor}\textit{MEM:}\endnote{\queryMNP{#2}}}
+}% then
+{}% else
+}
+
+% Same as \queryM but without a margin callout mark.
+% Mark is instead added at the beginning of the inline comment.
+%
+% Arguments: 
+%   (required) - query text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+\newcommand{\queryMNP}[2][\textcircled{$\alpha$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\color{mMemColor}\textbf{#1 MEM:} {#2}}
+}% then
+{}% else
+}
+
+% Same as \queryMEN but without a margin callout mark.
+%
+% Arguments: 
+%   (required) - query text.
+%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+\newcommand{\queryMNPEN}[2][\textcircled{$\alpha$}]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+    {\color{mMemColor}\textit{#1}\endnote{\queryMNP{#2}}}
+}% then
+{}% else
+}
+
+% Same as \queryM but simply hides the provided content.
+% Useful for temporary disabling the inline note.
+%
+% Arguments: 
+%   (required) - query text, not rendered.
+%   (optional) - mark symbol, not rendered.
+\newcommand{\queryMH}[2]{\xspace}
+
+% Display all end-notes of quotes.
+\newcommand{\queryMRenderWidget}[1]{
+\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+\begin{quote}
+    {\marginpar{
+        {\color{mMemColor}\textcircled{$\sigma$}}
+    }}
+    \small
+    \color{mMemColor}
+    \printendnotes
+\end{quote}
+}% then
+{}% else
+}
