@@ -1,6 +1,7 @@
+\RequirePackage{ifthen}
 \RequirePackage{xcolor}
-\RequirePackage{enotez}
 \RequirePackage{xspace}
+% \RequirePackage{enotez}
 
 % \iffalse meta-comment
 %
@@ -24,12 +25,11 @@
 
 % -- Colors --
 
-% Source: https://colorbrewer2.org/#type=qualitative&scheme=Pastel1&n=5
-\definecolor{mTodoColor}{HTML}{b3e2cd}
-\definecolor{mIdeaColor}{HTML}{e6f5c9}
-\definecolor{mNoteColor}{HTML}{cbd5e8}
-\definecolor{mMemColor}{HTML}{f4cae4}
-\definecolor{mPeachColor}{HTML}{fdcdac}
+% Source: https://colorbrewer2.org/#type=diverging&scheme=RdYlBu&n=6
+\definecolor{mTodoColor}{HTML}{fc8d59}
+\definecolor{mIdeaColor}{HTML}{4575b4}
+\definecolor{mNoteColor}{HTML}{91bfdb}
+\definecolor{mMemColor}{HTML}{e0f3f8}
 
 % -- To Do Highlights --
 
@@ -70,7 +70,7 @@
 % Arguments: 
 %   (required) - todo text, not rendered.
 %   (optional) - mark symbol, not rendered.
-\newcommand{\todoMH}[2]{\xspace}
+\newcommand{\todoMH}[2][\textcircled{$\odot$}]{\xspace}
 
 % -- Notes --
 
@@ -111,7 +111,7 @@
 % Arguments: 
 %   (required) - note text, not rendered.
 %   (optional) - mark symbol, not rendered.
-\newcommand{\noteMH}[2]{\xspace}
+\newcommand{\noteMH}[2][\textcircled{$\nu$}]{\xspace}
 
 % -- Idea Notes --
 
@@ -152,7 +152,7 @@
 % Arguments: 
 %   (required) - idea text, not rendered.
 %   (optional) - mark symbol, not rendered.
-\newcommand{\ideaMH}[2]{\xspace}
+\newcommand{\ideaMH}[2][\textcircled{$\iota$}]{\xspace}
 
 % -- Query Notes --
 
@@ -174,18 +174,18 @@
 {}% else
 }
 
-% Creates in-line query flag with a margin callout mark, and content sent to end-notes.
-%
-% Arguments: 
-%   (required) - query text.
-%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
-\newcommand{\queryMEN}[2][\textcircled{$\alpha$}]{
-\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
-    {\marginpar{{\color{mMemColor} #1}}}
-    {\color{mMemColor}\textit{MEM:}\endnote{\queryMNP{#2}}}
-}% then
-{}% else
-}
+% % Creates in-line query flag with a margin callout mark, and content sent to end-notes.
+% %
+% % Arguments: 
+% %   (required) - query text.
+% %   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+% \newcommand{\queryMEN}[2][\textcircled{$\alpha$}]{
+% \ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+%     {\marginpar{{\color{mMemColor} #1}}}
+%     {\color{mMemColor}\textit{MEM:}\endnote{\queryMNP{#2}}}
+% }% then
+% {}% else
+% }
 
 % Same as \queryM but without a margin callout mark.
 % Mark is instead added at the beginning of the inline comment.
@@ -200,17 +200,17 @@
 {}% else
 }
 
-% Same as \queryMEN but without a margin callout mark.
-%
-% Arguments: 
-%   (required) - query text.
-%   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
-\newcommand{\queryMNPEN}[2][\textcircled{$\alpha$}]{
-\ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
-    {\color{mMemColor}\textit{#1}\endnote{\queryMNP{#2}}}
-}% then
-{}% else
-}
+% % Same as \queryMEN but without a margin callout mark.
+% %
+% % Arguments: 
+% %   (required) - query text.
+% %   (optional) - mark symbol, default: $\iota$, provide an empty value to skip.
+% \newcommand{\queryMNPEN}[2][\textcircled{$\alpha$}]{
+% \ifthenelse{\equal{\showMulberryNotesCounter}{1}}{
+%     {\color{mMemColor}\textit{#1}\endnote{\queryMNP{#2}}}
+% }% then
+% {}% else
+% }
 
 % Same as \queryM but simply hides the provided content.
 % Useful for temporary disabling the inline note.
@@ -218,7 +218,7 @@
 % Arguments: 
 %   (required) - query text, not rendered.
 %   (optional) - mark symbol, not rendered.
-\newcommand{\queryMH}[2]{\xspace}
+\newcommand{\queryMH}[2][\textcircled{$\alpha$}]{\xspace}
 
 % Display all end-notes of quotes.
 \newcommand{\queryMRenderWidget}[1]{
