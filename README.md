@@ -6,14 +6,15 @@
 This package allows a specific way of note-taking in LaTeX documents.   
 It uses inline comments, simple style, and visual clues in margins. 
 
-![demo](./demo.png)
+> [!TIP]
+> ![demo](./demo.png)
 
 
 ## Getting started
 
-> [!IMPORTANT]
-> `mulberry` is not yet published on CTAN repository.
-> Use the manual approach below to use it for now:
+> [!WARNING]
+> `mulberry` is not yet published on CTAN repository.  
+> Use the [manual approach](#manual-approach) below to use it for now:
 
 ### Manual approach
 
@@ -44,7 +45,7 @@ It uses inline comments, simple style, and visual clues in margins.
     \end{document}
     ```
 
-    <details open=1><summary><i>Rendered view:</i></summary>
+    <details><summary><i>Rendered view:</i></summary>
     
     > ![demo](./demo.png)
 
