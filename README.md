@@ -3,59 +3,66 @@
 > [!NOTE]
 > Mark your **TODO's and other notes** in the LaTeX document, with a subjective style and margin highlights.
 
-This package is tailored for my subjective way of leaving notes in LaTeX documents.   
-It aims at simplicity, author traces, and visual clues. 
+This package allows a specific way of note-taking in LaTeX documents.   
+It uses inline comments, simple style, and visual clues in margins. 
 
-Feel free to try it out and use it if you like it!
+![demo](./demo.png)
+
 
 ## Getting started
 
-Here's how to start using `mulberry-notes`:
+> [!IMPORTANT]
+> `mulberry` is not yet published on CTAN repository.
+> Use the manual approach below to use it for now:
 
-```tex
-% Enable the marks
-\usepackage{mulberry-notes}
+### Manual approach
 
-% This will hide all the marks, useful for final manuscript views
-% \usepackage[hidden]{mulberry-notes}
+1. Copy the `mulberry.sty` into your LaTeX project's root.
+2. Important the package and use it in your LaTeX code:
 
-\begin{document}
+    ```tex
+    % Enable the marks
+    \usepackage{mulberry}
+    
+    % This will hide all the marks, useful for final manuscript views
+    % \usepackage[hidden]{mulberry-notes}
+    
+    \begin{document}
+    
+    Hello there,
+    
+    Here is the \texttt{mulberry} demo.
+    
+    \todoM{Make a better introduction} 
+    
+    Here are some features:
+    
+    \noteM{This is just a note.}
+    
+    \ideaM{Support other note-styles later.}
+    
+    \end{document}
+    ```
 
-Hey there!
-\todoM{Make a better introduction} 
-Welcome to the mulberry todo marks.
+    <details open=1><summary><i>Rendered view:</i></summary>
+    
+    > ![demo](./demo.png)
 
-\noteM{This is just a note.}
+    </details>
 
-\end{document}
-```
+## Extending
 
-<!-- TODO: add a preview -->
+### Local copies 
 
+Since the project is not yet distributed through CTAN, feel free to adapt the source code of the copied `mulberry.sty` in your project. 
 
-## Features
+### Shared features
 
-> [!NOTE]
-> See all available features in the [documentation](./mulberry-notes-manual.md).
-
-The feature set is very basic but keeps expanding and open for new ideas.  
-
-<!-- TODO: add a demo example -->
-
-### Adding new features
-
-> [!NOTE]
-> Feel free to submit feature requests as issues or PRs! 😊
-
-The core principle (that I try to maintain): 
-  - **_keeping it simple_** (to develop and use).
-    - also, I try not to use external dependencies (to keep this package as free from interferences as possible). 
+If you would like to make specific features available by default, feel free to suggest a PR. 
 
 ## Inspiration
 
-With huge thanks for inspiration from 
+Thanks for inspiration to: 
 
 - [`zebra-goodies`](https://github.com/xueruini/zebra-goodies)
-
-<!-- TODO: extend the list -->
 
